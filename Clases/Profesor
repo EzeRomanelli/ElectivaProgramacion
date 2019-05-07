@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clases
+{
+    public class Profesor
+    {
+        private int idProfesor;
+        private String nombre;
+        private String sexo;
+        private List<Actividad> actividadesDadas;
+
+        public Profesor(int id, String n, String s)
+        {
+            idProfesor = id;
+            nombre = n;
+            sexo = s;
+            actividadesDadas = new List<Actividad>();
+        }
+
+        public List<Actividad> gsActividades
+        {
+            get
+            {
+                return actividadesDadas;
+            }
+        }
+
+        public int IdProfesor
+        {
+            set
+            {
+                idProfesor = value;
+            }
+            get
+            {
+                return idProfesor;
+            }
+        }
+
+        public string Nombre
+        {
+            set
+            {
+                nombre = value;
+            }
+            get
+            {
+                return nombre;
+            }
+        }
+
+        public override string ToString()
+        {
+            return nombre;
+        }
+
+    }
+}
