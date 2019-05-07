@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clases
+{
+    public sealed class SocioActividad : Socio
+    {
+        private List<Actividad> actividadesRealizadas;
+
+
+        public SocioActividad(int id, String n,Actividad act) : base(id,n)
+        {
+            this.agregaActividad(act);
+        }
+
+        public void agregaActividad(Actividad act)
+        {
+            actividadesRealizadas.Add(act);
+        }
+    }
+}
