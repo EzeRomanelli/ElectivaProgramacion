@@ -1,0 +1,57 @@
+//AgregarSocioActividad
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Clases;
+
+namespace TPElectivaNuevo
+{
+    public partial class AgregarSocioActividad : Form
+    {
+        private SocioActividad socio;
+
+
+        public AgregarSocioActividad()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgregarSocioActividad_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public SocioActividad gsSocioAct
+        {
+            get
+            {
+                return socio;
+            }
+        }
+
+        private void buttonAgregarSocio_Click(object sender, EventArgs e)
+        {
+            Actividad act = (Actividad)listBoxActividades.SelectedItem;
+
+            socio = new SocioActividad(int.Parse(textBoxiIdSocio.Text), textBoxNombreYApellidoSocio.Text, act );
+
+            this.Close();
+        }
+
+        private void listBoxActividades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
