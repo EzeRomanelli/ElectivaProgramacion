@@ -1,0 +1,137 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clases
+{
+    public class Actividad
+    {
+        private int id_actividad;
+        private string nombreAct;
+        private float precioUnitario;
+        private String dia;
+        private int hora; // solo se aceptan horarios en punto
+        private Profesor profesor;
+        private int limiteInscriptos;
+        private List<Socio> sociosInsc;
+
+        public Actividad(int id, String n, float precio, string Dia, int Hora, Profesor prof, int limite)
+        {
+            id_actividad = id;
+            nombreAct = n;
+            precioUnitario = precio;
+            dia = Dia;
+            hora = Hora;
+            profesor = prof;
+            limiteInscriptos = limite;
+            sociosInsc = new List<Socio>();
+        }
+
+        public int gsId
+        {
+            set
+            {
+                id_actividad = value;
+            }
+            get
+            {
+                return id_actividad;
+            }
+        }
+
+        public string gsNombre
+        {
+            set
+            {
+                nombreAct = value;
+            }
+            get
+            {
+                return nombreAct;
+            }
+        }
+
+        public override string ToString()
+        {
+            return nombreAct;
+        }
+
+
+        public string gsDia
+        {
+            set
+            {
+                dia = value;
+            }
+            get
+            {
+                return dia;
+            }
+        }
+
+
+        public int gsHora
+        {
+            set
+            {
+                hora = value;
+            }
+            get
+            {
+                return hora;
+            }
+        }
+
+
+        public Profesor gsProfesor
+        {
+            set
+            {
+                profesor = value;
+            }
+            get
+            {
+                return profesor;
+            }
+        }
+
+
+        public int gsLimiteInscriptos
+        {
+            set
+            {
+                limiteInscriptos = value;
+            }
+            get
+            {
+                return limiteInscriptos;
+            }
+        }
+
+        
+        public int gsSociosInscriptos
+        {
+            
+            get
+            {
+                return this.sociosInsc.Count();
+            }
+        }
+
+        public float gsPrecio
+        {
+            set
+            {
+                precioUnitario = value;
+            }
+            get
+            {
+                return precioUnitario;
+            }
+        }
+
+    }
+}
+
