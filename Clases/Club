@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clases
+{
+    public class Club
+    {
+        private double cuit = 24396576679;
+        private String razonSocial = "Club deportivo RomVai";
+        private List<Socio> socios;
+        private List<Profesor> profesores;
+        private List<Actividad> actividades;
+
+        public Club()
+        {
+            socios = new List<Socio>();
+            profesores = new List<Profesor>();
+            actividades = new List<Actividad>();
+        }
+
+
+        public void agregaActividad(Actividad act)
+        {
+            actividades.Add(act);
+        }
+
+        public void agregaProfesor(Profesor profe)
+        {
+            profesores.Add(profe);
+        }
+
+        public List<Actividad> getActividades
+        {
+            get { return actividades; }
+        }
+
+        public List<Profesor> getProfesores
+        {
+            get { return profesores; }
+        }
+
+        public List<Socio> getSocios
+        {
+            get { return socios; }
+        }
+
+        public Actividad BuscarAct(int id)
+        {
+
+            foreach (Actividad a in actividades)
+            {
+                if (a.gsId == id)
+                {
+                    return a;
+                }
+            }
+
+            return null;
+        }
+
+        public Profesor BuscarProf(int id)
+        {
+
+            foreach (Profesor a in profesores)
+            {
+                if (a.IdProfesor == id)
+                {
+                    return a;
+                }
+            }
+
+            return null;
+        }
+
+
+        public void eliminarActividad(Actividad act)
+        {
+            actividades.Remove(act);
+        }
+
+        public void agregarSocio(Socio soc)
+        {
+            socios.Add(soc);
+        }
+
+    }
+
+
+
+}
+
