@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clases
+{
+    public class Ticket
+    {
+        private String razonSocial = "Club deportivo RomVai";
+        private double cuit = 24396576679;
+        private int id_ticket;
+        private DateTime fechaEmision;
+        private Socio socio;
+        private float total;
+
+        public Ticket(int id, DateTime f, Socio s)
+        {
+            id_ticket = id;
+            fechaEmision = f;
+            socio = s;
+        }
+    }
+}
