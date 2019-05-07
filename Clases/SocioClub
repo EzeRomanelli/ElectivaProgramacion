@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clases
+{
+
+    public sealed class SocioClub : Socio
+    {
+        private List<Actividad> actividadesFree;
+        private List<Actividad> actividadesExtras;
+        private int descuento = 50; // porcentaje
+        private float cuotaSocial;
+
+        public SocioClub(int id, String n, float cs) : base(id, n)
+        {
+            actividadesFree = new List<Actividad>();
+            actividadesExtras = new List<Actividad>();
+            cuotaSocial = cs;
+            ticketPendientes = new List<Ticket>();
+            
+        }
+    }
+}
