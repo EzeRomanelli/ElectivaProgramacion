@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clases
+{
+    public abstract class Socio
+    {
+        protected int idSocio;
+        protected String nombreSocio;
+        protected List<Ticket> ticketPendientes;
+
+        public Socio(int id, String n)
+        {
+            idSocio = id;
+            nombreSocio = n;
+        }
+
+
+
+    }
+}
+
