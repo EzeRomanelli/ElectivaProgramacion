@@ -1,0 +1,45 @@
+//MostrarActividad
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Clases;
+
+namespace TPElectivaNuevo
+{
+    public partial class MostrarActividad : Form
+    {
+        public MostrarActividad(Actividad act)
+        {
+            InitializeComponent();
+            this.label4.Text = act.gsId.ToString();
+            this.lblNombreAct.Text = act.gsNombre;
+            this.lblDia.Text = act.gsDia;
+            this.lblHora.Text = act.gsHora.ToString();
+            this.lblLimiteInscriptos.Text = act.gsLimiteInscriptos.ToString();
+            this.lblSociosInscriptos.Text = act.gsSociosInscriptos.ToString();
+            this.lblProfesor.Text = act.gsProfesor.ToString();
+            this.lblPrecio.Text = act.gsPrecio.ToString();
+        }
+
+        private void MostrarActividad_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblProfesor_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
