@@ -1,0 +1,90 @@
+// AgregarActividad
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Clases;
+
+namespace TPElectivaNuevo
+{
+    public partial class AgregarActividad : Form
+    {
+        private Actividad act;
+
+
+        public AgregarActividad()
+        {
+            InitializeComponent();
+        }
+
+        private void AgregarActividad_Load(object sender, EventArgs e)
+        {
+           /* List<Profesor> profes = club.getProfesores;
+            if (profes == null) {
+                this.listBoxProfesores.DataSource = null;
+            }
+            else
+            listBoxProfesores.DataSource = profes;*/
+        }
+
+        public Actividad gsAct
+        {
+            get
+            {
+                return act;
+            }
+        }
+
+        private void btnAgregarAct_Click(object sender, EventArgs e)
+        {
+            Profesor prof = (Profesor)listBoxProfesores.SelectedItem;
+
+            act = new Actividad(int.Parse(textIDAct.Text), textNombreAct.Text, float.Parse(textBoxPrecio.Text), textBoxDia.Text, int.Parse(textBoxHora.Text), prof, int.Parse(textBoxLimiteInscriptos.Text));
+
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxLimiteInscriptos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxProfesor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textNombreAct_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void profesorBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSeleccionarProfesor_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listBoxProfesores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+    }
+}
