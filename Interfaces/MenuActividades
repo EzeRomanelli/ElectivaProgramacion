@@ -1,0 +1,176 @@
+//MenuActividades
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+using Clases;
+
+namespace TPElectivaNuevo
+{
+    public partial class MenuActividades : Form
+    {
+        private Club club;
+        public MenuActividades()
+        {
+            InitializeComponent();
+            club = new Club();
+        }
+
+        private void MenuPrincipal_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) // boton agregar actividad
+        {
+            AgregarActividad agregarAct = new AgregarActividad();
+           
+            agregarAct.listBoxProfesores.DataSource = club.getProfesores;
+           
+
+            agregarAct.ShowDialog();
+
+
+
+            Actividad act = agregarAct.gsAct;
+            if (act != null)
+            {
+                club.agregaActividad(act);
+                this.listBoxActividades.DataSource = null;
+                this.listBoxActividades.DataSource = club.getActividades;
+                listBoxActividades.ClearSelected();
+            }
+        }
+
+        private void listBoxActividades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            Actividad act = (Actividad)listBoxActividades.SelectedItem;
+            if (act == null)
+                MessageBox.Show("No se seleccinó ninguna actividad");
+            else
+            {
+                MostrarActividad mostrarAct = new MostrarActividad(act);
+                mostrarAct.ShowDialog();
+            }
+        }
+
+        public Club Club
+        {
+            get
+            {
+                return club;
+            }
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            Actividad act = (Actividad)listBoxActividades.SelectedItem;
+            if (act == null)
+                MessageBox.Show("No se seleccinó ninguna actividad");
+            else
+            {
+
+                listBoxActividades.DataSource = null ; // siempre se pone en null el list box - averiguar
+                club.eliminarActividad(act);  // elimina la actividad seleccionada
+                listBoxActividades.DataSource = club.getActividades; // recarga las actividades
+
+            }
+
+        }
+
+        private void ButtonEliminarSocio_Click(object sender, EventArgs e) 
+        {
+
+        }
+
+        private void Button1_Click_2(object sender, EventArgs e)
+        {
+            AgregarSocioClub agregarSoc = new AgregarSocioClub();
+            agregarSoc.ShowDialog();
+
+            listBoxSocios = null;
+            listBoxSocios.DataSource = club.getSocios;
+            listBoxSocios.ClearSelected();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       private void button1_Click_3(object sender, EventArgs e)
+        {
+            Agregar_profesor agregarProfe = new Agregar_profesor();
+            
+            agregarProfe.ShowDialog();
+            Profesor profe = agregarProfe.gsProfe;
+            if (profe != null)
+            {
+                club.agregaProfesor(profe);
+                this.listProfesores.DataSource = null;
+                this.listProfesores.DataSource = club.getProfesores;
+          
+                
+                listProfesores.ClearSelected();
+
+            }
+
+        
+            /* Agregar_profesor agregarProfe = new Agregar_profesor();  // COMBO BOX
+             agregarProfe.ShowDialog();
+             Profesor pr = agregarProfe.gsProe;
+             if (pr != null)
+             {
+                 club.agregaProfesor(pr);
+             }*/
+        }
+
+        private void listProfesores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_4(object sender, EventArgs e) // boton agregar socio actividad
+        {
+            AgregarSocioActividad agregarSocio = new AgregarSocioActividad();
+
+            agregarSocio.listboxActividades= club.getActividades;
+            
+            agregarSocio.ShowDialog();
+
+            SocioActividad socioAct = agregarSocio.gsSocioAct;
+            if (socioAct != null)
+            {
+                club.agregarSocio(socioAct);
+                this.listBoxSocios.DataSource = null;
+                this.listBoxSocios.DataSource = club.getActividades;
+                listBoxSocios.ClearSelected();
+            }
+
+           
+        }
+    }
+    }
